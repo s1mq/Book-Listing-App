@@ -1,8 +1,5 @@
 package com.example.android.booklistingapp;
 
-import static android.R.attr.author;
-import static android.R.attr.category;
-
 /**
  * A custom class for books to store information about them, e.g title, author, page count etc.
  */
@@ -17,7 +14,7 @@ public class Book {
     /**
      * Author of the book
      */
-    private String mAuthor;
+    private StringBuilder mAuthors;
 
     /**
      * Publisher of the book
@@ -27,7 +24,7 @@ public class Book {
     /**
      * Category of the book
      */
-    private String mCategory;
+    private StringBuilder mCategories;
 
     /**
      * Page count fo the book
@@ -37,7 +34,7 @@ public class Book {
     /**
      * Rating of the book
      */
-    private int mRating;
+    private String mRating;
 
     /**
      * Web url of the book
@@ -47,19 +44,20 @@ public class Book {
     /**
      * Public constructor to make a new {@link Book} object.
      *
-     * @param title     is the title of the book
-     * @param author    is/are the author(s) of the book
-     * @param publisher is the publisher of the book
-     * @param category  is the category of the book
-     * @param pageCount is the number of pages of the book
-     * @param rating    is the book's rating
-     * @param url       is the address for the book
+     * @param title         is the title of the book
+     * @param authors       are the authors of the book
+     * @param publisher     is the publisher of the book
+     * @param categories    are the category of the book
+     * @param pageCount     is the number of pages of the book
+     * @param rating        is the book's rating
+     * @param url           is the address for the book
      */
-    public Book(String title, String author, String publisher, String category, int pageCount, int rating, String url) {
+    public Book(String title, StringBuilder authors, String publisher, StringBuilder categories,
+                int pageCount, String rating, String url) {
         mTitle = title;
-        mAuthor = author;
+        mAuthors = authors;
         mPublisher = publisher;
-        mCategory = category;
+        mCategories = categories;
         mPageCount = pageCount;
         mRating = rating;
         mUrl = url;
@@ -75,23 +73,23 @@ public class Book {
         return mTitle;
     }
 
-    public String getAuthor() {
-        return mAuthor;
+    public StringBuilder getAuthor() {
+        return mAuthors;
     }
 
     public String getPublisher() {
         return mPublisher;
     }
 
-    public String getCategory() {
-        return mCategory;
+    public StringBuilder getCategory() {
+        return mCategories;
     }
 
     public int getPageCount() {
         return mPageCount;
     }
 
-    public int getRating() {
+    public String getRating() {
         return mRating;
     }
 
