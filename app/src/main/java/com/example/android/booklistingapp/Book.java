@@ -1,6 +1,7 @@
 package com.example.android.booklistingapp;
 
 import static android.R.attr.author;
+import static android.R.attr.category;
 
 /**
  * A custom class for books to store information about them, e.g title, author, page count etc.
@@ -17,6 +18,11 @@ public class Book {
      * Author of the book
      */
     private String mAuthor;
+
+    /**
+     * Publisher of the book
+     */
+    private String mPublisher;
 
     /**
      * Category of the book
@@ -43,14 +49,16 @@ public class Book {
      *
      * @param title     is the title of the book
      * @param author    is/are the author(s) of the book
+     * @param publisher is the publisher of the book
      * @param category  is the category of the book
      * @param pageCount is the number of pages of the book
      * @param rating    is the book's rating
      * @param url       is the address for the book
      */
-    public Book(String title, String author, String category, int pageCount, int rating, String url) {
+    public Book(String title, String author, String publisher, String category, int pageCount, int rating, String url) {
         mTitle = title;
         mAuthor = author;
+        mPublisher = publisher;
         mCategory = category;
         mPageCount = pageCount;
         mRating = rating;
@@ -69,6 +77,10 @@ public class Book {
 
     public String getAuthor() {
         return mAuthor;
+    }
+
+    public String getPublisher() {
+        return mPublisher;
     }
 
     public String getCategory() {
