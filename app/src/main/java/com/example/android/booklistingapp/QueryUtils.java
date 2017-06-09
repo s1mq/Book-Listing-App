@@ -102,7 +102,7 @@ public final class QueryUtils {
         } catch (IOException e) {
             Log.e(LOG_TAG, "Problem retrieving the Earthquake JSON results.", e);
         } finally {
-            if (urlConnection != null){
+            if (urlConnection != null) {
                 urlConnection.disconnect();
             }
             if (inputStream != null) {
@@ -158,7 +158,7 @@ public final class QueryUtils {
             JSONArray bookArray = baseJsonResponse.getJSONArray("items");
 
             // For each book in the bookArray, create an {@link Book} object
-            for (int i = 0; i < bookArray.length(); i++){
+            for (int i = 0; i < bookArray.length(); i++) {
 
                 // Get a single book at position i within the list of books
                 JSONObject currentBook = bookArray.getJSONObject(i);
@@ -175,33 +175,60 @@ public final class QueryUtils {
                 JSONArray authorsArray;
                 // Extract the value for the key called "authors"
                 StringBuilder authors = new StringBuilder();
-                authorsArray = volumeInfo.getJSONArray("authors");
-                for(int n=0; n < authorsArray.length(); n++){
-                    authors.append(System.getProperty("line.separator"));
-                    authors.append(authorsArray.getString(n));
+                if (volumeInfo.has("authors")) {
+                    authorsArray = volumeInfo.getJSONArray("authors");
+                    for (int n = 0; n < authorsArray.length(); n++) {
+                        authors.append(authorsArray.getString(n));
+                        authors.append(" ");
+                    }
+                } else {
+                    authors.append("Not available");
                 }
 
                 // Extract the value for the key called "publisher"
-                String publisher = volumeInfo.getString("publisher");
+                String publisher;
+                if (volumeInfo.has("publisher")) {
+                    publisher = volumeInfo.getString("publisher");
+                } else {
+                    publisher = "Not available";
+                }
+
 
                 // Create a new ArrayList
                 JSONArray categoryArray;
                 // Extract the value for the key called "categories"
                 StringBuilder categories = new StringBuilder();
-                categoryArray = volumeInfo.getJSONArray("categories");
-                for(int n=0; n < categoryArray.length(); n++){
-                    categories.append(System.getProperty("line.separator"));
-                    categories.append(categoryArray.getString(n));
+                if (volumeInfo.has("categories")) {
+                    categoryArray = volumeInfo.getJSONArray("categories");
+                    for (int n = 0; n < categoryArray.length(); n++) {
+                        categories.append(categoryArray.getString(n));
+                        authors.append(" ");
+                    }
+                } else {
+                    categories.append("Not available");
                 }
 
                 // Extract the value for key called "pageCount"
-                int pageCount = volumeInfo.getInt("pageCount");
+                String pageCount;
+                if (volumeInfo.has("pageCount")){
+                    pageCount = volumeInfo.getString("pageCount");
+                } else {
+                    pageCount = "Not available";
+                }
 
                 // Extract the value for key called "averageRating"
-                String rating = volumeInfo.getString("averageRating");
+                String rating;
+                if (volumeInfo.has("averageRating")) {
+                    rating = volumeInfo.getString("averageRating");
+                } else {
+                    rating = "--";
+                }
 
                 // Extract the value for the key called "infoLink"
-                String url = volumeInfo.getString("infoLink");
+                String url = null;
+                if (volumeInfo.has("infoLink")){
+                    url = volumeInfo.getString("infoLink");
+                }
 
                 // Create a new Book java object from title, authors, publisher, categories,
                 // pageCount, rating and url from the JSON response
@@ -210,7 +237,6 @@ public final class QueryUtils {
                 // Add earthquake to list of earthquakes
                 books.add(book);
             }
-
 
 
         } catch (JSONException e) {
@@ -223,7 +249,6 @@ public final class QueryUtils {
         // Return the list of earthquakes
         return books;
     }
-
 
 
 }

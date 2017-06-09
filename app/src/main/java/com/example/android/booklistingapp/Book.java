@@ -29,7 +29,7 @@ public class Book {
     /**
      * Page count fo the book
      */
-    private int mPageCount;
+    private String mPageCount;
 
     /**
      * Rating of the book
@@ -53,7 +53,7 @@ public class Book {
      * @param url           is the address for the book
      */
     public Book(String title, StringBuilder authors, String publisher, StringBuilder categories,
-                int pageCount, String rating, String url) {
+                String pageCount, String rating, String url) {
         mTitle = title;
         mAuthors = authors;
         mPublisher = publisher;
@@ -85,7 +85,7 @@ public class Book {
         return mCategories;
     }
 
-    public int getPageCount() {
+    public String getPageCount() {
         return mPageCount;
     }
 

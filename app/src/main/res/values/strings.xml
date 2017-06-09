@@ -3,7 +3,13 @@
     <string name="search">search</string>
     <string name="search_for_books_hint">Search for books</string>
     <string name="author">Author: </string>
-    <string name="publisher">Publisher:</string>
-    <string name="category">Category:</string>
-    <string name="page_count">Page count:</string>
+    <string name="publisher">Publisher: </string>
+    <string name="category">Category: </string>
+    <string name="page_count">Page count: </string>
+    <string name="not_available">Not available</string>
+    <string name="no_rating">--</string>
+    <string name="no_books">No books found</string>
+    <string name="no_internet">No Internet connection</string>
+    <string name="thumbnail_image">thumbnail_image</string>
+    <string name="star_icon">star_icon</string>
 </resources>

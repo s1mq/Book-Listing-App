@@ -32,8 +32,6 @@ public class BookLoader extends AsyncTaskLoader<List<Book>> {
     @Override
     protected void onStartLoading() {
 
-        Log.i(LOG_TAG, "TEST: onStartLoading() called ...");
-
         forceLoad();
     }
 
@@ -42,8 +40,6 @@ public class BookLoader extends AsyncTaskLoader<List<Book>> {
      */
     @Override
     public List<Book> loadInBackground() {
-
-        Log.i(LOG_TAG, "TEST: loadInBackground() called ...");
 
         if (mUrl == null) {
             return  null;
