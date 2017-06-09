@@ -44,13 +44,13 @@ public class Book {
     /**
      * Public constructor to make a new {@link Book} object.
      *
-     * @param title         is the title of the book
-     * @param authors       are the authors of the book
-     * @param publisher     is the publisher of the book
-     * @param categories    are the category of the book
-     * @param pageCount     is the number of pages of the book
-     * @param rating        is the book's rating
-     * @param url           is the address for the book
+     * @param title      is the title of the book
+     * @param authors    are the authors of the book
+     * @param publisher  is the publisher of the book
+     * @param categories are the category of the book
+     * @param pageCount  is the number of pages of the book
+     * @param rating     is the book's rating
+     * @param url        is the address for the book
      */
     public Book(String title, StringBuilder authors, String publisher, StringBuilder categories,
                 String pageCount, String rating, String url) {

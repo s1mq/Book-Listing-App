@@ -210,7 +210,7 @@ public final class QueryUtils {
 
                 // Extract the value for key called "pageCount"
                 String pageCount;
-                if (volumeInfo.has("pageCount")){
+                if (volumeInfo.has("pageCount")) {
                     pageCount = volumeInfo.getString("pageCount");
                 } else {
                     pageCount = "Not available";
@@ -226,7 +226,7 @@ public final class QueryUtils {
 
                 // Extract the value for the key called "infoLink"
                 String url = null;
-                if (volumeInfo.has("infoLink")){
+                if (volumeInfo.has("infoLink")) {
                     url = volumeInfo.getString("infoLink");
                 }
 

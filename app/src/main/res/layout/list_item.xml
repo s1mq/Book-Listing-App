@@ -6,11 +6,11 @@
     android:background="@android:drawable/dialog_holo_light_frame">
 
     <ImageView
-        android:contentDescription="@string/thumbnail_image"
         android:id="@+id/thumbnail"
         android:layout_width="@dimen/image_width"
         android:layout_height="@dimen/image_height"
         android:layout_margin="@dimen/layout_margin_16"
+        android:contentDescription="@string/thumbnail_image"
         tools:src="@drawable/placeholder" />
 
     <LinearLayout
@@ -37,9 +37,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/author"
-                android:layout_marginRight="@dimen/layout_margin_4"
                 android:layout_marginEnd="@dimen/layout_margin_4"
+                android:layout_marginRight="@dimen/layout_margin_4"
+                android:text="@string/author"
                 android:textColor="@color/extra_text"
                 android:textSize="@dimen/text_size_small" />
 
@@ -63,9 +63,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/publisher"
-                android:layout_marginRight="@dimen/layout_margin_4"
                 android:layout_marginEnd="@dimen/layout_margin_4"
+                android:layout_marginRight="@dimen/layout_margin_4"
+                android:text="@string/publisher"
                 android:textColor="@color/main_text"
                 android:textSize="@dimen/text_size_small" />
 
@@ -89,9 +89,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/category"
-                android:layout_marginRight="@dimen/layout_margin_4"
                 android:layout_marginEnd="@dimen/layout_margin_4"
+                android:layout_marginRight="@dimen/layout_margin_4"
+                android:text="@string/category"
                 android:textColor="@color/main_text"
                 android:textSize="@dimen/text_size_small" />
 
@@ -115,8 +115,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/layout_margin_4"
                 android:layout_marginEnd="@dimen/layout_margin_4"
+                android:layout_marginRight="@dimen/layout_margin_4"
                 android:text="@string/page_count"
                 android:textColor="@color/main_text"
                 android:textSize="@dimen/text_size_small" />
@@ -151,15 +151,12 @@
             tools:text="4.5" />
 
         <ImageView
-            android:contentDescription="@string/star_icon"
             android:id="@+id/rating_star"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:alpha="0.5"
+            android:contentDescription="@string/star_icon"
             android:src="@drawable/ic_star" />
 
-
     </LinearLayout>
-
-
 </LinearLayout>
